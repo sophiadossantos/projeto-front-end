@@ -1,0 +1,22 @@
+{
+  "usuarios": [
+    {
+      "id": "1",
+      "nome": "Sophia Santos",
+      "email": "sophia@example.com",
+      "senha": "123456",
+      "telefone": "99999-9999",
+      "perfil": "admin"
+    }
+  ],
+  "servicos": [
+    {
+      "id": "00b9",
+      "nome": "Banho e Tosa",
+      "descricao": "Banho e Tosa",
+      "preco": "300.00",
+      "duracao": "1 hora",
+      "categoria": "PetShop"
+    }
+  ]
+}
