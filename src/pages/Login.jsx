@@ -10,13 +10,16 @@ export const Login = () => {
   const navigate = useNavigate();
   const { login } = useAuthContext();
 
+  // Função para tratar o submit do login
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setErro(""); // limpa erro ao tentar logar
     try {
       const usuarios = await getUsuarios();
       const usuarioEncontrado = usuarios.find(
         (u) => u.email === email && u.senha === senha
       );
+
       if (usuarioEncontrado) {
         login(usuarioEncontrado);
         navigate("/dashboard");
@@ -29,7 +32,7 @@ export const Login = () => {
   };
 
   return (
-    <div style={{ padding: "2rem", maxWidth: "400px", margin: "auto" }}>
+    <div style={{ padding: 20, maxWidth: 400, margin: "auto" }}>
       <h2>Login</h2>
       <form onSubmit={handleSubmit}>
         <input
@@ -38,7 +41,7 @@ export const Login = () => {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
-          style={{ width: "100%", marginBottom: "1rem" }}
+          style={{ width: "100%", marginBottom: 10 }}
         />
         <input
           type="password"
@@ -46,12 +49,12 @@ export const Login = () => {
           value={senha}
           onChange={(e) => setSenha(e.target.value)}
           required
-          style={{ width: "100%", marginBottom: "1rem" }}
+          style={{ width: "100%", marginBottom: 10 }}
         />
         <button type="submit" style={{ width: "100%" }}>
           Entrar
         </button>
-        {erro && <p style={{ color: "red", marginTop: "1rem" }}>{erro}</p>}
+        {erro && <p style={{ color: "red", marginTop: 10 }}>{erro}</p>}
       </form>
     </div>
   );

@@ -26,19 +26,14 @@ export const Usuarios = () => {
     try {
       const dados = await getUsuarios();
       setUsuarios(dados);
+      setErro("");
     } catch {
       setErro("Erro ao carregar usuários");
     }
   };
 
   const limparFormulario = () => {
-    setForm({
-      nome: "",
-      email: "",
-      senha: "",
-      telefone: "",
-      perfil: "",
-    });
+    setForm({ nome: "", email: "", senha: "", telefone: "", perfil: "" });
     setEditandoId(null);
     setErro("");
   };
@@ -80,10 +75,10 @@ export const Usuarios = () => {
   };
 
   return (
-    <div style={{ padding: "2rem", marginTop: "4rem" }}>
+    <div style={{ padding: 20, marginTop: 64 }}>
       <h2>Usuários</h2>
 
-      <form onSubmit={handleSubmit} style={{ marginBottom: "2rem" }}>
+      <form onSubmit={handleSubmit} style={{ marginBottom: 20 }}>
         <input
           name="nome"
           placeholder="Nome"
@@ -105,7 +100,7 @@ export const Usuarios = () => {
           placeholder="Senha"
           value={form.senha}
           onChange={handleChange}
-          required={!editandoId} // Senha obrigatória somente na criação
+          required={!editandoId}
         />
         <input
           name="telefone"
@@ -119,7 +114,7 @@ export const Usuarios = () => {
           value={form.perfil}
           onChange={handleChange}
         />
-        <button type="submit" style={{ marginTop: "0.5rem" }}>
+        <button type="submit" style={{ marginTop: 8 }}>
           {editandoId ? "Salvar Alterações" : "Adicionar Usuário"}
         </button>
         {erro && <p style={{ color: "red" }}>{erro}</p>}

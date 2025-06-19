@@ -6,7 +6,7 @@ export const Footer = () => {
         bottom: 0,
         width: "100%",
         backgroundColor: "#eee",
-        padding: "10px",
+        padding: 10,
         textAlign: "center",
       }}
     >

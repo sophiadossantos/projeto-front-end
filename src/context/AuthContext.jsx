@@ -5,10 +5,12 @@ const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
   const [usuarioLogado, setUsuarioLogado] = useState(null);
 
+  // Função para logar usuário
   const login = (usuario) => {
     setUsuarioLogado(usuario);
   };
 
+  // Função para deslogar usuário
   const logout = () => {
     setUsuarioLogado(null);
   };
@@ -20,6 +22,5 @@ export const AuthProvider = ({ children }) => {
   );
 };
 
-export const useAuthContext = () => {
-  return useContext(AuthContext);
-};
+// Hook para usar o contexto de autenticação
+export const useAuthContext = () => useContext(AuthContext);

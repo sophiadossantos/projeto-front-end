@@ -5,6 +5,7 @@ export const Navbar = () => {
   const { logout } = useAuthContext();
   const navigate = useNavigate();
 
+  // Função para deslogar e redirecionar para login
   const handleLogout = () => {
     logout();
     navigate("/login");
@@ -17,20 +18,23 @@ export const Navbar = () => {
         top: 0,
         width: "100%",
         backgroundColor: "#eee",
-        padding: "10px",
+        padding: 10,
         display: "flex",
         justifyContent: "space-between",
       }}
     >
       <div>
-        <Link to="/dashboard" style={{ marginRight: "15px" }}>
+        {/* Links de navegação */}
+        <Link to="/dashboard" style={{ marginRight: 15 }}>
           Dashboard
         </Link>
-        <Link to="/usuarios" style={{ marginRight: "15px" }}>
+        <Link to="/usuarios" style={{ marginRight: 15 }}>
           Usuários
         </Link>
         <Link to="/servicos">Serviços</Link>
       </div>
+
+      {/* Botão para logout */}
       <button onClick={handleLogout}>Sair</button>
     </nav>
   );

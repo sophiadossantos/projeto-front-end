@@ -22,27 +22,25 @@ export const Servicos = () => {
     carregarServicos();
   }, []);
 
+  // Carrega serviços da API
   const carregarServicos = async () => {
     try {
       const dados = await getServicos();
       setServicos(dados);
+      setErro("");
     } catch {
       setErro("Erro ao carregar serviços");
     }
   };
 
+  // Limpa o formulário para novo cadastro
   const limparFormulario = () => {
-    setForm({
-      nome: "",
-      descricao: "",
-      preco: "",
-      duracao: "",
-      categoria: "",
-    });
+    setForm({ nome: "", descricao: "", preco: "", duracao: "", categoria: "" });
     setEditandoId(null);
     setErro("");
   };
 
+  // Trata submit do formulário para criar ou editar
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -58,12 +56,14 @@ export const Servicos = () => {
     }
   };
 
+  // Preenche formulário para editar
   const handleEditar = (servico) => {
     setForm(servico);
     setEditandoId(servico.id);
     setErro("");
   };
 
+  // Excluir serviço após confirmação
   const handleExcluir = async (id) => {
     if (window.confirm("Confirma exclusão?")) {
       try {
@@ -75,15 +75,16 @@ export const Servicos = () => {
     }
   };
 
+  // Atualiza estado do formulário conforme usuário digita
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
   return (
-    <div style={{ padding: "2rem", marginTop: "4rem" }}>
+    <div style={{ padding: 20, marginTop: 64 }}>
       <h2>Serviços</h2>
 
-      <form onSubmit={handleSubmit} style={{ marginBottom: "2rem" }}>
+      <form onSubmit={handleSubmit} style={{ marginBottom: 20 }}>
         <input
           name="nome"
           placeholder="Nome do Serviço"
@@ -122,7 +123,7 @@ export const Servicos = () => {
           onChange={handleChange}
           required
         />
-        <button type="submit" style={{ marginTop: "0.5rem" }}>
+        <button type="submit" style={{ marginTop: 8 }}>
           {editandoId ? "Salvar Alterações" : "Adicionar Serviço"}
         </button>
         {erro && <p style={{ color: "red" }}>{erro}</p>}
