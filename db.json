@@ -1,7 +1,7 @@
 {
   "usuarios": [
     {
-      "id": "1",
+      "id": 1,
       "nome": "Sophia dos Santos",
       "email": "sophia@gmail.com",
       "senha": "123456",
@@ -10,7 +10,7 @@
     },
 
     {
-      "id": "2",
+      "id": 2,
       "nome": "Isabel Bastos",
       "email": "isabel@gmail.com",
       "senha": "987654",
@@ -20,7 +20,7 @@
   ],
   "servicos": [
     {
-      "id": "1",
+      "id": 1,
       "nome": "Banho",
       "descricao": "Banho completo",
       "preco": 150.0,
@@ -29,7 +29,7 @@
     },
 
     {
-      "id": "2",
+      "id": 2,
       "nome": "Vacinação",
       "descricao": "Aplicação de vacinas essenciais para cães e gatos",
       "preco": 120.0,
@@ -38,7 +38,7 @@
     },
 
     {
-      "id": "3",
+      "id": 3,
       "nome": "Tosa",
       "descricao": "Tosa personalizada",
       "preco": 100.0,
