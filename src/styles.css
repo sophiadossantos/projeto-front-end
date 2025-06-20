@@ -1,86 +1,124 @@
-/* src/styles.css */
-
-/* Reset básico */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* Fonte e fundo */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f7f8fa;
-  color: #333;
-  line-height: 1.6;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #fff0f5; /* lavanda clarinha, tom pastel */
+  color: #4a3c47; /* roxo escuro suave */
+  margin: 0;
+  padding-top: 60px; /* espaço para navbar fixa */
+  padding-bottom: 50px; /* espaço para footer fixa */
 }
 
-/* Container centralizado e responsivo */
-.container {
-  max-width: 900px;
-  margin: 20px auto;
-  padding: 0 15px;
+/* --- Navbar --- */
+/* Sobrescreve estilo inline usando !important */
+nav {
+  background-color: #f8d7da !important; /* rosa pastel claro */
+  padding: 12px 20px !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  box-shadow: 0 2px 6px rgba(193, 90, 112, 0.3) !important;
 }
 
-/* Navbar simples */
-.navbar {
-  background-color: #005f73;
-  padding: 15px 20px;
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-/* Links da Navbar */
-.navbar a {
-  color: white;
+nav a {
+  color: #a34e60 !important; /* rosa mais escuro */
+  margin-right: 20px !important;
   text-decoration: none;
-  margin-left: 15px;
-  font-weight: bold;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
 }
 
-/* Botão estilizado */
-.button {
-  background-color: #0a9396;
+nav a:hover {
+  color: #6f3643 !important;
+}
+
+nav button {
+  background-color: #a34e60 !important;
+  border: none !important;
+  border-radius: 8px !important;
+  color: white !important;
+  padding: 8px 18px !important;
+  cursor: pointer !important;
+  font-weight: 600 !important;
+  font-size: 1rem !important;
+  transition: background-color 0.3s ease !important;
+}
+
+nav button:hover {
+  background-color: #6f3643 !important;
+}
+
+/* --- Footer --- */
+footer {
+  background-color: #f8d7da !important;
+  padding: 14px !important;
+  text-align: center !important;
+  color: #a34e60 !important;
+  font-weight: 600 !important;
+  box-shadow: 0 -2px 8px rgba(163, 78, 96, 0.3) !important;
+  position: fixed !important;
+  bottom: 0 !important;
+  width: 100% !important;
+  font-size: 0.9rem;
+}
+
+/* --- Login Page --- */
+div[style*="max-width: 400px"] {
+  background: #fff0f5; /* lavanda pastel */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(163, 78, 96, 0.2);
+  padding: 30px 25px;
+  margin: 40px auto;
+  color: #4a3c47;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 1.8rem;
+}
+
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 15px;
+  border: 1.5px solid #a34e60;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline-color: #d88ca6;
+  transition: border-color 0.3s ease;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus {
+  border-color: #6f3643;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  background-color: #a34e60;
   border: none;
+  border-radius: 8px;
   color: white;
-  padding: 10px 20px;
-  border-radius: 4px;
+  font-weight: 700;
+  font-size: 1.1rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-.button:hover {
-  background-color: #94d2bd;
+button[type="submit"]:hover {
+  background-color: #6f3643;
 }
 
-/* Cards para conteúdo */
-.card {
-  background: white;
-  border-radius: 8px;
-  padding: 20px;
-  margin: 20px 0;
-  box-shadow: 0 0 8px rgba(0,0,0,0.1);
-}
-
-/* Footer */
-.footer {
+p {
+  margin-top: 12px;
+  font-weight: 600;
   text-align: center;
-  padding: 15px;
-  background-color: #005f73;
-  color: white;
-  margin-top: 40px;
 }
 
-/* Responsividade simples */
-@media (max-width: 600px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  
-  .navbar a {
-    margin: 8px 0 0 0;
-  }
+/* --- Mensagem de erro --- */
+p[style*="color: red"] {
+  color: #d14759 !important;
+  font-weight: 600;
 }
