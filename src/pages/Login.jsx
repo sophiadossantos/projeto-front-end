@@ -10,10 +10,9 @@ export const Login = () => {
   const navigate = useNavigate();
   const { login } = useAuthContext();
 
-  // Função para tratar o submit do login
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setErro(""); // limpa erro ao tentar logar
+    setErro("");
     try {
       const usuarios = await getUsuarios();
       const usuarioEncontrado = usuarios.find(

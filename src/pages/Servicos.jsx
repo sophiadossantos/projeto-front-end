@@ -22,7 +22,6 @@ export const Servicos = () => {
     carregarServicos();
   }, []);
 
-  // Carrega serviços da API
   const carregarServicos = async () => {
     try {
       const dados = await getServicos();
@@ -33,14 +32,12 @@ export const Servicos = () => {
     }
   };
 
-  // Limpa o formulário para novo cadastro
   const limparFormulario = () => {
     setForm({ nome: "", descricao: "", preco: "", duracao: "", categoria: "" });
     setEditandoId(null);
     setErro("");
   };
 
-  // Trata submit do formulário para criar ou editar
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -56,14 +53,12 @@ export const Servicos = () => {
     }
   };
 
-  // Preenche formulário para editar
   const handleEditar = (servico) => {
     setForm(servico);
     setEditandoId(servico.id);
     setErro("");
   };
 
-  // Excluir serviço após confirmação
   const handleExcluir = async (id) => {
     if (window.confirm("Confirma exclusão?")) {
       try {
@@ -75,7 +70,6 @@ export const Servicos = () => {
     }
   };
 
-  // Atualiza estado do formulário conforme usuário digita
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };

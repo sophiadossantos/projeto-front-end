@@ -4,7 +4,6 @@ const api = axios.create({
   baseURL: "http://localhost:3000",
 });
 
-// Função helper para tratar requisições e erros
 const request = async (method, url, data) => {
   try {
     const res = await api({ method, url, data });
