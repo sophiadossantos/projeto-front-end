@@ -1,3 +1,4 @@
+import "./styles.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { AuthProvider, useAuthContext } from "./context/AuthContext";
 import { PrivateRoute } from "./components/PrivateRoute";
