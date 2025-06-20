@@ -4,9 +4,11 @@ export const Dashboard = () => {
   const { usuarioLogado } = useAuthContext();
 
   return (
-    <div style={{ padding: 20, marginTop: 64 }}>
-      <h1>Bem-vindo(a), {usuarioLogado?.nome}!</h1>
-      <p>Este é o dashboard do sistema.</p>
+    <div className="dashboard-container">
+      <img src="/telainicial.png" alt="MeuPet+" className="dashboard-image" />
+      <p className="dashboard-text">
+        {usuarioLogado?.nome}, que bom ter você aqui com a gente!
+      </p>
     </div>
   );
 };

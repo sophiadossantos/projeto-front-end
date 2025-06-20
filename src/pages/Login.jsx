@@ -31,16 +31,15 @@ export const Login = () => {
   };
 
   return (
-    <div style={{ padding: 20, maxWidth: 400, margin: "auto" }}>
-      <h2>Login</h2>
-      <form onSubmit={handleSubmit}>
+    <div className="login-page">
+      <form onSubmit={handleSubmit} className="login-form">
+        <img src="/logo.png" alt="MeuPet+" className="logo-login" />
         <input
           type="email"
           placeholder="E-mail"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
-          style={{ width: "100%", marginBottom: 10 }}
         />
         <input
           type="password"
@@ -48,12 +47,9 @@ export const Login = () => {
           value={senha}
           onChange={(e) => setSenha(e.target.value)}
           required
-          style={{ width: "100%", marginBottom: 10 }}
         />
-        <button type="submit" style={{ width: "100%" }}>
-          Entrar
-        </button>
-        {erro && <p style={{ color: "red", marginTop: 10 }}>{erro}</p>}
+        <button type="submit">Entrar</button>
+        {erro && <p>{erro}</p>}
       </form>
     </div>
   );

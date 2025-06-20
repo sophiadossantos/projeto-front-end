@@ -1,0 +1,37 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+:root {
+  --vinho-escuro: #6b2f3d; /* vinho rosado mais fechado */
+  --rosa-elegante-escuro: #aa4d59; /* rosa queimado mais sóbrio */
+  --rosa-elegante: #d46f71; /* rosa principal (mantido) */
+  --rosa-claro: #eec5c9; /* rosa claro elegante, sem brilho */
+  --rosa-logo: #d46f71; /* rosa base */
+  --cinza-gelo: #f3f1f2; /* fundo claro com toque rosado/champagne */
+  --cinza-gelo-suave: #fbf8f8; /* branco com leve tom pêssego apagado */
+  --rosa-fosco: #f8e6e7; /* rosa leitoso, bem sutil */
+  --branco-gelo: #ffffff; /* branco puro */
+  --sombra-suave: rgba(
+    212,
+    111,
+    113,
+    0.1
+  ); /* sombra leve puxada do rosa-logo */
+  --fonte-principal: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  font-family: var(--fonte-principal);
+  background: var(--cinza-gelo);
+  color: var(--vinho-escuro);
+  margin: 0;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}

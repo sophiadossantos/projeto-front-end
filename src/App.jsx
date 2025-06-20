@@ -1,5 +1,10 @@
-import "./styles.css";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import "./assets/styles/app.css";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 import { AuthProvider, useAuthContext } from "./context/AuthContext";
 import { PrivateRoute } from "./components/PrivateRoute";
 
@@ -17,8 +22,10 @@ function AppLayout() {
   return (
     <>
       {usuarioLogado && <Navbar />}
+
       <Routes>
         <Route path="/login" element={<Login />} />
+
         <Route
           path="/dashboard"
           element={
@@ -27,6 +34,7 @@ function AppLayout() {
             </PrivateRoute>
           }
         />
+
         <Route
           path="/usuarios"
           element={
@@ -35,6 +43,7 @@ function AppLayout() {
             </PrivateRoute>
           }
         />
+
         <Route
           path="/servicos"
           element={
@@ -43,8 +52,20 @@ function AppLayout() {
             </PrivateRoute>
           }
         />
-        <Route path="*" element={<Login />} />
+        <Route
+          path="/"
+          element={
+            usuarioLogado ? (
+              <Navigate to="/dashboard" />
+            ) : (
+              <Navigate to="/login" />
+            )
+          }
+        />
+
+        <Route path="*" element={<h1>Página não encontrada</h1>} />
       </Routes>
+
       {usuarioLogado && <Footer />}
     </>
   );

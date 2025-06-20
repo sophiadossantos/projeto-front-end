@@ -75,10 +75,10 @@ export const Usuarios = () => {
   };
 
   return (
-    <div style={{ padding: 20, marginTop: 64 }}>
+    <div>
       <h2>Usuários</h2>
 
-      <form onSubmit={handleSubmit} style={{ marginBottom: 20 }}>
+      <form className="formulario-cadastro" onSubmit={handleSubmit}>
         <input
           name="nome"
           placeholder="Nome"
@@ -114,13 +114,13 @@ export const Usuarios = () => {
           value={form.perfil}
           onChange={handleChange}
         />
-        <button type="submit" style={{ marginTop: 8 }}>
+        <button type="submit">
           {editandoId ? "Salvar Alterações" : "Adicionar Usuário"}
         </button>
         {erro && <p style={{ color: "red" }}>{erro}</p>}
       </form>
 
-      <table border="1" cellPadding="8" cellSpacing="0" width="100%">
+      <table className="tabela-usuarios">
         <thead>
           <tr>
             <th>Nome</th>

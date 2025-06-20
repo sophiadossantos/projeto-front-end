@@ -1,0 +1,77 @@
+button {
+  background-color: var(--rosa-elegante);
+  box-shadow: 0 2px 6px var(--sombra-suave);
+  color: var(--rosa-fosco);
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+button:hover {
+  background-color: var(--rosa-elegante-escuro);
+}
+
+nav {
+  background-color: var(--rosa-claro);
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  max-width: 100%;
+  z-index: 100;
+  box-shadow: 0 2px 6px var(--sombra-suave);
+  box-sizing: border-box;
+}
+
+nav a {
+  color: var(--rosa-elegante);
+  margin-right: 16px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+nav a:hover {
+  color: var(--rosa-elegante-escuro);
+}
+
+nav .nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logout-button {
+  background-color: var(--rosa-elegante);
+  color: var(--rosa-fosco);
+  border: none;
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 15px;
+  cursor: pointer;
+}
+.logout-button:hover {
+  background-color: var(--rosa-elegante-escuro);
+}
+
+/* Footer */
+footer {
+  background-color: var(--rosa-fosco);
+  text-align: center;
+  padding: 15px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  color: var(--rosa-elegante);
+  margin-right: 16px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 13px;
+}
