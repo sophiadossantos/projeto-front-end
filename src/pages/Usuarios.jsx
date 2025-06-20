@@ -133,11 +133,11 @@ export const Usuarios = () => {
         <tbody>
           {usuarios.map((u) => (
             <tr key={u.id}>
-              <td>{u.nome}</td>
-              <td>{u.email}</td>
-              <td>{u.telefone}</td>
-              <td>{u.perfil}</td>
-              <td>
+              <td data-label="Nome">{u.nome}</td>
+              <td data-label="E-mail">{u.email}</td>
+              <td data-label="Telefone">{u.telefone}</td>
+              <td data-label="Perfil">{u.perfil}</td>
+              <td data-label="Ações">
                 <button onClick={() => handleEditar(u)}>Editar</button>{" "}
                 <button onClick={() => handleExcluir(u.id)}>Excluir</button>
               </td>

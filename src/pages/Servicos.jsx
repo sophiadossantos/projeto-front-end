@@ -137,12 +137,12 @@ export const Servicos = () => {
         <tbody>
           {servicos.map((s) => (
             <tr key={s.id}>
-              <td>{s.nome}</td>
-              <td>{s.descricao}</td>
-              <td>{Number(s.preco).toFixed(2)}</td>
-              <td>{s.duracao}</td>
-              <td>{s.categoria}</td>
-              <td>
+              <td data-label="Nome">{s.nome}</td>
+              <td data-label="Descrição">{s.descricao}</td>
+              <td data-label="Preço">{Number(s.preco).toFixed(2)}</td>
+              <td data-label="Duração">{s.duracao}</td>
+              <td data-label="Categoria">{s.categoria}</td>
+              <td data-label="Ações">
                 <button onClick={() => handleEditar(s)}>Editar</button>{" "}
                 <button onClick={() => handleExcluir(s.id)}>Excluir</button>
               </td>
