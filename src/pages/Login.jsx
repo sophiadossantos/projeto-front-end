@@ -12,27 +12,32 @@ export const Login = () => {
   const navigate = useNavigate();
   const { login } = useAuthContext();
 
-  // handleLogin faz a requisição para buscar usuários no JSON Server
+  // impede o site de recarregar ao 'entrar'
   const handleSubmit = async (e) => {
     e.preventDefault();
     setErro("");
     try {
-      const usuarios = await getUsuarios();
+      const usuarios = await getUsuarios(); // indo até o json server buscar os usuários
+      // procurar informações
       const usuarioEncontrado = usuarios.find(
         (u) => u.email === email && u.senha === senha
       );
 
+      // se encontrar, vai navegar até o dashboard
       if (usuarioEncontrado) {
         login(usuarioEncontrado);
         navigate("/dashboard");
+
+        // se não, erro
       } else {
         setErro("Usuário ou senha inválidos");
       }
     } catch {
-      setErro("Erro ao tentar logar. Tente novamente."); // Se o usuário não for encontrado, ativa o erro para mostrar a mensagem
+      setErro("Erro ao tentar logar. Tente novamente.");
     }
   };
 
+  //estrutura visual da tela de login
   return (
     <div className="login-page">
       <form onSubmit={handleSubmit} className="login-form">

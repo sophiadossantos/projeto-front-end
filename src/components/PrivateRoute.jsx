@@ -1,16 +1,17 @@
-// Componente de rota protegida que só renderiza a página se o usuário estiver autenticado
-import { Navigate } from "react-router-dom";
-import { useAuthContext } from "../context/AuthContext";
+// vai garantir que apenas quem está logado vai acessar o sistema
+
+import { Navigate } from "react-router-dom"; // vai redirecionar
+import { useAuthContext } from "../context/AuthContext"; // diz se tem usuário logado
 
 export const PrivateRoute = ({ children }) => {
-  // Recupera o usuário autenticado a partir do contexto global
+  // aqui vai puxar o usuário logado do context
   const { usuarioLogado } = useAuthContext();
 
-  // Se não houver usuário logado, redireciona para a tela de login
+  // se não houver, redireciona para a tela de login
   if (!usuarioLogado) {
     return <Navigate to="/login" replace />;
   }
 
-  // Se estiver autenticado, renderiza normalmente a rota protegida
+  // se estiver logado, mostra o conteúdo da página normalmente
   return children;
 };

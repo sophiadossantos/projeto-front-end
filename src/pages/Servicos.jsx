@@ -7,7 +7,6 @@ import {
 } from "../services/api";
 
 export const Servicos = () => {
-  // Estrutura igual à de usuários, com campos diferentes (nome, valor, etc)
   const [servicos, setServicos] = useState([]);
   const [form, setForm] = useState({
     nome: "",
@@ -18,12 +17,13 @@ export const Servicos = () => {
   });
   const [editandoId, setEditandoId] = useState(null);
   const [erro, setErro] = useState("");
+  // guardam listas de serviços, dados digitados no formulário, o ID que está sendo editado, erro
 
+  // assim que abrir a página, busca todos os serviços no json server
   useEffect(() => {
     carregarServicos();
   }, []);
 
-  // Requisições HTTP com axios e tratamento com try/catch
   const carregarServicos = async () => {
     try {
       const dados = await getServicos();
@@ -76,6 +76,7 @@ export const Servicos = () => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
+  // visual
   return (
     <div>
       <h2>Serviços</h2>

@@ -1,11 +1,11 @@
 import axios from "axios";
 
-// Configuração central do axios com baseURL
 const api = axios.create({
   baseURL: "http://localhost:3000",
 });
 
-// Função genérica para fazer requisições HTTP com tratamento de erro
+// cria a função axios
+
 const request = async (method, url, data) => {
   try {
     const res = await api({ method, url, data }); // Faz a requisição

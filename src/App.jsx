@@ -1,12 +1,12 @@
-import "./assets/styles/app.css";
+// onde organiza todas as rotas de aplicação
 
-// Importa o roteamento
+import "./assets/styles/app.css";
 import {
   BrowserRouter as Router,
   Routes,
   Route,
   Navigate,
-} from "react-router-dom"; // Rotas SPA usando react-router-dom
+} from "react-router-dom";
 
 import { AuthProvider, useAuthContext } from "./context/AuthContext";
 import { PrivateRoute } from "./components/PrivateRoute";
@@ -19,10 +19,12 @@ import { Dashboard } from "./pages/Dashboard";
 import { Usuarios } from "./pages/Usuarios";
 import { Servicos } from "./pages/Servicos";
 
-function AppLayout() {
-  const { usuarioLogado } = useAuthContext(); // Verifica se o usuário está logado
+// importando as ferramentas de navegação, as páginas e a proteção das rotas
 
-  // Navbar e Footer só aparecem se o usuário estiver autenticado
+function AppLayout() {
+  const { usuarioLogado } = useAuthContext(); // verifica se o usuário está logado
+
+  // se estiver logado, mostra a navbar
   return (
     <>
       {usuarioLogado && <Navbar />}
@@ -66,12 +68,11 @@ function AppLayout() {
             )
           }
         />
-
         <Route path="*" element={<h1>Página não encontrada</h1>} />
       </Routes>
       {usuarioLogado && <Footer />}
     </>
-  );
+  ); // se o usuário estiver logado aparece o footer
 }
 
 export const App = () => {
@@ -83,3 +84,7 @@ export const App = () => {
     </AuthProvider>
   );
 };
+
+// aqui, o authprovider guarda quem está logado,
+// o router cuida da navegação das páginas
+// o applayout armazenas todas as rotas e telas do sistema

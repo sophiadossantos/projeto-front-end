@@ -23,5 +23,5 @@ export const Navbar = () => {
         Sair
       </button>
     </nav>
-  ); // Botão de logout limpa autenticação
+  ); // botão de logout limpa autenticação
 };

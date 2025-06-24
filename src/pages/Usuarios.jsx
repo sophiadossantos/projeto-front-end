@@ -10,24 +10,24 @@ import {
 } from "../services/api";
 
 export const Usuarios = () => {
-  // useState para armazenar usuários e formulário
-  const [usuarios, setUsuarios] = useState([]);
+  const [usuarios, setUsuarios] = useState([]); // lista com os usuários
   const [form, setForm] = useState({
+    // aramazena o que está sendo digitado
     nome: "",
     email: "",
     senha: "",
     telefone: "",
     perfil: "",
   });
-  const [editandoId, setEditandoId] = useState(null);
-  const [erro, setErro] = useState("");
+  const [editandoId, setEditandoId] = useState(null); //edita
+  const [erro, setErro] = useState(""); //erro
 
   // useEffect carrega os dados ao abrir a página
   useEffect(() => {
     carregarUsuarios();
   }, []);
 
-  // Funções CRUD com axios: get, post, put, delete
+  // vai até o json server, pega os dados e mostra nos usuários
   const carregarUsuarios = async () => {
     try {
       const dados = await getUsuarios();
@@ -44,6 +44,7 @@ export const Usuarios = () => {
     setErro("");
   };
 
+  // editando: put (editar), post (criar) e depois atualiza a lista e limpa o formuláro
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -65,6 +66,7 @@ export const Usuarios = () => {
     setErro("");
   };
 
+  // excluir, remove do json server
   const handleExcluir = async (id) => {
     if (window.confirm("Confirma exclusão?")) {
       try {
@@ -76,10 +78,12 @@ export const Usuarios = () => {
     }
   };
 
+  // atualiza o formulário enquanto digito
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
+  // visual
   return (
     <div>
       <h2>Usuários</h2>
