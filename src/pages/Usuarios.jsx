@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
+// useState para armazenar usuários e formulário
+// useEffect carrega os dados ao abrir a página
 
-// Importa as funções da API para trabalhar com usuários
 import {
   getUsuarios,
   criarUsuario,
@@ -9,6 +10,7 @@ import {
 } from "../services/api";
 
 export const Usuarios = () => {
+  // useState para armazenar usuários e formulário
   const [usuarios, setUsuarios] = useState([]);
   const [form, setForm] = useState({
     nome: "",
@@ -20,10 +22,12 @@ export const Usuarios = () => {
   const [editandoId, setEditandoId] = useState(null);
   const [erro, setErro] = useState("");
 
+  // useEffect carrega os dados ao abrir a página
   useEffect(() => {
     carregarUsuarios();
   }, []);
 
+  // Funções CRUD com axios: get, post, put, delete
   const carregarUsuarios = async () => {
     try {
       const dados = await getUsuarios();

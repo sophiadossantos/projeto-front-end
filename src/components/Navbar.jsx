@@ -10,6 +10,7 @@ export const Navbar = () => {
     navigate("/login");
   };
 
+  // Links para navegação SPA
   return (
     <nav>
       <div className="nav-links">
@@ -22,5 +23,5 @@ export const Navbar = () => {
         Sair
       </button>
     </nav>
-  );
+  ); // Botão de logout limpa autenticação
 };

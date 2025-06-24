@@ -1,4 +1,6 @@
 import { useState } from "react";
+// useState para controlar os campos do formulário e o estado de erro
+
 import { useNavigate } from "react-router-dom";
 import { getUsuarios } from "../services/api";
 import { useAuthContext } from "../context/AuthContext";
@@ -10,6 +12,7 @@ export const Login = () => {
   const navigate = useNavigate();
   const { login } = useAuthContext();
 
+  // handleLogin faz a requisição para buscar usuários no JSON Server
   const handleSubmit = async (e) => {
     e.preventDefault();
     setErro("");
@@ -26,7 +29,7 @@ export const Login = () => {
         setErro("Usuário ou senha inválidos");
       }
     } catch {
-      setErro("Erro ao tentar logar. Tente novamente.");
+      setErro("Erro ao tentar logar. Tente novamente."); // Se o usuário não for encontrado, ativa o erro para mostrar a mensagem
     }
   };
 

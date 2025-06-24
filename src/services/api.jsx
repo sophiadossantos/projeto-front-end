@@ -1,6 +1,6 @@
 import axios from "axios";
 
-// Cria uma instância do axios com base na URL do JSON Server
+// Configuração central do axios com baseURL
 const api = axios.create({
   baseURL: "http://localhost:3000",
 });
@@ -30,3 +30,5 @@ export const criarServico = (servico) => request("post", "/servicos", servico);
 export const editarServico = (id, servico) =>
   request("put", `/servicos/${id}`, servico);
 export const deletarServico = (id) => request("delete", `/servicos/${id}`);
+
+// Exportação para ser usado nos componentes

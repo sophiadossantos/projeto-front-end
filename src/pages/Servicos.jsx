@@ -7,6 +7,7 @@ import {
 } from "../services/api";
 
 export const Servicos = () => {
+  // Estrutura igual à de usuários, com campos diferentes (nome, valor, etc)
   const [servicos, setServicos] = useState([]);
   const [form, setForm] = useState({
     nome: "",
@@ -22,6 +23,7 @@ export const Servicos = () => {
     carregarServicos();
   }, []);
 
+  // Requisições HTTP com axios e tratamento com try/catch
   const carregarServicos = async () => {
     try {
       const dados = await getServicos();
