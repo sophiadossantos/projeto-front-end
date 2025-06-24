@@ -1,16 +1,19 @@
 import axios from "axios";
 
+// Cria uma instância do axios com base na URL do JSON Server
 const api = axios.create({
   baseURL: "http://localhost:3000",
 });
 
+// Função genérica para fazer requisições HTTP com tratamento de erro
 const request = async (method, url, data) => {
   try {
-    const res = await api({ method, url, data });
-    return res.data;
+    const res = await api({ method, url, data }); // Faz a requisição
+    return res.data; // Retorna apenas os dados da resposta
   } catch (error) {
+    // Mostra erro no console se falhar
     console.error(`Erro na requisição ${method.toUpperCase()} ${url}:`, error);
-    throw error;
+    throw error; // Repassa o erro para ser tratado no front
   }
 };
 

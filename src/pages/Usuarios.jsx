@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+
+// Importa as funções da API para trabalhar com usuários
 import {
   getUsuarios,
   criarUsuario,
